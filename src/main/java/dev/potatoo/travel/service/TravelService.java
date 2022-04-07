@@ -22,7 +22,10 @@ public class TravelService {
 		return travelMapper.checkArea();
 	}
 	
-	
+	/* 지역 색칠 */
+	public int insertArea() {
+		return travelMapper.insertArea();
+	}
 	
 	
 	

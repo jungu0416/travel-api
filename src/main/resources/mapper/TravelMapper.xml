@@ -7,4 +7,13 @@
 	<select id = "checkArea" resultType = "CheckArea">
 		select location,area from area;
 	</select>
+	
+	<insert id= "insertArea" resultType = "Integer">
+		<!-- 파라미터에 도시이름 넣기 -->
+		
+	</insert>
+	
+	
+	
+	
 </mapper>
