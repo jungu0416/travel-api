@@ -3,10 +3,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TravelProjectRestapiApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TravelProjectRestapiApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 
 }

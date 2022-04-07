@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class CheckArea {
-	private String area;
 	private String location;
+	private String area;
 	
 }

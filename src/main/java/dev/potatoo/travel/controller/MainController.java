@@ -1,28 +1,33 @@
 package dev.potatoo.travel.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import dev.potatoo.travel.service.CheckAreaService;
+import dev.potatoo.travel.model.CheckArea;
+import dev.potatoo.travel.service.TravelService;
 
 @RestController
 @RequestMapping("/api")
 public class MainController {
 	@Autowired
-	private CheckAreaService checkAreaService;
+	private TravelService travelService;
 	
+	//ResponseEntity
 	
 	@PostMapping("/check/area")
-	public ResponseEntity<CheckAreaService> checkArea() {
+	public List<CheckArea> checkArea() {
 		
-		checkAreaService.checkArea();
-		
-		
-		return null;
+		return travelService.checkArea();
 	}
+	
+	
+	
+	
+	
 	
 	
 	

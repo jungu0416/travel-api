@@ -5,21 +5,28 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import dev.potatoo.travel.model.CheckArea;
-import dev.potatoo.travel.repository.CheckAreaMapper;
+import dev.potatoo.travel.repository.TravelMapper;
 
 
 @Service
-public class CheckAreaService {
-	CheckAreaMapper checkAreaMapper;
+public class TravelService {
+	TravelMapper travelMapper;
 	
 	//생성자
-	public CheckAreaService(CheckAreaMapper checkAreaMapper) {
-		this.checkAreaMapper = checkAreaMapper;
+	public TravelService(TravelMapper travelMapper) {
+		this.travelMapper = travelMapper;
 	}
 	
 	/* 지역 색칠여부 확인 */
 	public List<CheckArea> checkArea(){
-		return checkAreaMapper.checkArea();
+		return travelMapper.checkArea();
 	}
+	
+	
+	
+	
+	
+	
+	
 	
 }

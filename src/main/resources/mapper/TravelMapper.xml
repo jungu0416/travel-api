@@ -3,9 +3,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
         
-        
-<mapper namespace = "dev.potatoo.travel.repository.CheckAreaMapper">
+<mapper namespace = "dev.potatoo.travel.repository.TravelMapper">
 	<select id = "checkArea" resultType = "CheckArea">
-		select 1 from dual;
+		select location,area from area;
 	</select>
 </mapper>

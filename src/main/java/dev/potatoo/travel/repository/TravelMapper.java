@@ -7,10 +7,8 @@ import org.apache.ibatis.annotations.Mapper;
 import dev.potatoo.travel.model.CheckArea;
 
 @Mapper
-public interface CheckAreaMapper {
+public interface TravelMapper {
 	
 	List<CheckArea> checkArea();
-	
-	
 	
 }
