@@ -20,30 +20,23 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 
-	@PostMapping("/check/area")
-	public ResponseEntity<CheckAreaService> checkArea() {
-		
-		checkAreaService = new CheckAreaService();
-		
-		
-		
-		return null;
-	}
-	
-	@PostMapping("/check/user")
-	public ResponseEntity<UserService> checkUser(){
-		
-		
-		return null;
-	}
-	
-	
 	/* 테스트  */
 	@GetMapping("/test")
 	public String test(@RequestParam("userid") String userid) {
 		return "test";
 	}
+
 	
+	
+	@PostMapping("/check/area")
+	public ResponseEntity<CheckAreaService> checkArea() {
+		return null;
+	}
+	
+	@PostMapping("/check/user")
+	public ResponseEntity<UserService> checkUser(){
+		return null;
+	}
 	
 	
 }
