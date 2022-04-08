@@ -35,5 +35,5 @@ tasks.named('test') {
 }
 
 bootWar{
-	archiveName("test.war")
+	archiveName("travel-restapi.war")
 }
