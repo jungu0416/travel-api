@@ -1,31 +1,33 @@
-
-node {
-	stage('remove'){
-		try{
-			echo 'remove past build....'
-			sh 'rm -rf build/*'
-		}catch{
-			echo 'remove failed'
-			throw	
+pipeline {
+	agent any
+	stages {
+		stage('remove'){
+			steps{
+				echo 'remove past build....'
+				sh 'rm -rf build/*'
+				echo 'remove failed'
+			}
 		}
-	}
-	stage('build'){
-		try{
-			echo 'build...'
-			sh 'sudo ./gradlew bootwar'
-		}catch{
-			echo 'build failed'
-			throw		
+		stage('build'){
+			steps{
+				echo 'build...'
+				sh 'sudo ./gradlew bootwar'
+				echo 'build failed'
+			}
 		}
-	}
-	stage('deploy'){
-		echo 'deploying...'	
-		sh 'rm -rf /home/travel-restapi/*'
-		sh 'mv build/libs/* /home/travel-restapi/'
-	}
-	stage('execute'){
-		echo 'starting...'
-		//sh 'kill 포트번호'
-		//sh 'java -jar /home/travel-restapi/travel-restapi.war'
+		stage('deploy'){
+			steps{
+				echo 'deploying...'	
+				sh 'rm -rf /home/travel-restapi/*'
+				sh 'mv build/libs/* /home/travel-restapi/'
+			}
+		}
+		stage('execute'){
+			steps{
+				echo 'starting...'
+				//sh 'kill 포트번호'
+				//sh 'java -jar /home/travel-restapi/travel-restapi.war'
+			}		
+		}
 	}
 }
