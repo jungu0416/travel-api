@@ -1,0 +1,31 @@
+
+node {
+	stage('remove'){
+		try{
+			echo 'remove past'
+			sh 'rm -rf ./build/*'
+		}catch{
+			echo 'remove failed'
+			throw	
+		}
+	}
+	stage('build'){
+		try{
+			echo 'build...'
+			sh './gradlew bootwar'
+		}catch{
+			echo 'build failed'
+			throw		
+		}
+	}
+	stage('deploy'){
+		echo 'deploying...'	
+		sh 'mv ./build/jar/* /home/travel-restapi'
+	}
+	stage('execute'){
+		echo 'starting...'
+		sh 'kill'
+		sh 'rm -rf /home/travel-restapi/*'
+		sh 'java -jar /home/travel-restapi/travel.jar'
+	}
+}
