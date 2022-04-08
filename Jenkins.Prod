@@ -11,6 +11,7 @@ pipeline {
 		stage('build'){
 			steps{
 				echo 'build...'
+				sh 'chmod +x gradlew'
 				sh './gradlew bootwar'
 				echo 'build failed'
 			}
