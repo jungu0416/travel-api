@@ -4,8 +4,7 @@ pipeline {
 		stage('remove'){
 			steps{
 				echo 'remove past build....'
-				sh 'rm -rf build/*'
-				echo 'remove failed'
+				sh 'rm -rf build'
 			}
 		}
 		stage('build'){
