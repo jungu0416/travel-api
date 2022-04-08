@@ -22,13 +22,15 @@ public class TravelService {
 		return travelMapper.checkArea();
 	}
 	
-	/* 지역 색칠 */
-	public int insertArea() {
-		return travelMapper.insertArea();
+	/* 지역 삽입 */
+	public int insertArea(List<String> location) {
+		return travelMapper.insertArea(location);
 	}
 	
-	
-	
+	/* 지역 삽입 */
+	public int updateArea(String location) {
+		return travelMapper.updateArea(location);
+	}
 	
 	
 	
