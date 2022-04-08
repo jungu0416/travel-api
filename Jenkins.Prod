@@ -26,7 +26,8 @@ pipeline {
 			steps{
 				echo 'starting...'
 				//sh 'kill 포트번호'
-				//sh 'java -jar /home/travel-restapi/travel-restapi.war'
+				//sh 'cd /home/travel-restapi'
+				//sh 'nohup ./start.sh &'
 			}		
 		}
 	}
