@@ -11,7 +11,7 @@ pipeline {
 		stage('build'){
 			steps{
 				echo 'build...'
-				sh 'sudo ./gradlew bootwar'
+				sh './gradlew bootwar'
 				echo 'build failed'
 			}
 		}
