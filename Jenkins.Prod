@@ -18,7 +18,7 @@ pipeline {
 		stage('kill port'){
 			steps{
 				echo 'need to kill past port...'
-				// 해당 서비스 포트번호 죽이고 서비스 배포해야함
+				sh 'fuser -k 8088/tcp'
 			}
 		}
 		stage('deploy'){
@@ -31,7 +31,7 @@ pipeline {
 		stage('execute'){
 			steps{
 				echo 'starting...'
-				sh 'nohup java -jar /home/travel-restapi/travel-restapi.war &'
+				sh 'nohup sh /home/travel-restapi/start.sh &'
 				echo 'DONE!'
 			}		
 		}
