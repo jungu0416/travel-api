@@ -9,10 +9,10 @@ pipeline {
 		}
 		stage('build'){
 			steps{
-				echo 'build...'
+				echo 'building...'
 				sh 'chmod +x gradlew'
 				sh './gradlew bootwar'
-				echo 'build failed'
+				echo 'build success!!'
 			}
 		}
 		stage('deploy'){
@@ -25,9 +25,11 @@ pipeline {
 		stage('execute'){
 			steps{
 				echo 'starting...'
+				echo 'need to kill past port...'
 				//sh 'kill 포트번호'
-				//sh 'cd /home/travel-restapi'
-				//sh 'nohup ./start.sh &'
+				sh 'cd /home/travel-restapi'
+				sh 'nohup ./start.sh &'
+				echo 'DONE!'
 			}		
 		}
 	}
