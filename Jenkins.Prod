@@ -32,7 +32,6 @@ pipeline {
 			steps{
 				echo 'starting...'
 				sh 'nohup sh /home/travel-restapi/start.sh &'
-				echo 'DONE!'
 			}		
 		}
 	}
