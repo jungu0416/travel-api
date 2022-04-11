@@ -18,7 +18,7 @@ pipeline {
 		stage('kill port'){
 			steps{
 				echo 'need to kill past port...'
-				sh 'fuser -k 8088/tcp'
+				sh 'sh /home/travel-restapi/stop.sh'
 			}
 		}
 		stage('deploy'){
