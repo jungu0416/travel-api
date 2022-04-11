@@ -17,18 +17,19 @@ pipeline {
 		}
 		stage('deploy'){
 			steps{
+				echo 'need to kill past port...'
+				// 해당 서비스 포트번호 죽이고 서비스 배포해야함			
+			}
+			steps{
 				echo 'deploying...'	
-				sh 'rm -rf /home/travel-restapi/*'
+				sh 'rm -rf /home/travel-restapi/travel-restapi.war'
 				sh 'mv build/libs/* /home/travel-restapi/'
 			}
 		}
 		stage('execute'){
 			steps{
 				echo 'starting...'
-				echo 'need to kill past port...'
-				//sh 'kill 포트번호'
-				sh 'cd /home/travel-restapi'
-				sh 'nohup ./start.sh &'
+				sh 'nohup java -jar /home/travel-restapi/travel-restapi.war &'
 				echo 'DONE!'
 			}		
 		}
