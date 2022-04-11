@@ -31,7 +31,7 @@ pipeline {
 		stage('execute'){
 			steps{
 				echo 'starting...'
-				sh 'nohup sh /home/travel-restapi/start.sh &'
+				sh 'sh /home/travel-restapi/start.sh'
 			}		
 		}
 	}
