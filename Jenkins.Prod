@@ -15,11 +15,13 @@ pipeline {
 				echo 'build success!!'
 			}
 		}
-		stage('deploy'){
+		stage('kill port'){
 			steps{
 				echo 'need to kill past port...'
-				// 해당 서비스 포트번호 죽이고 서비스 배포해야함			
+				// 해당 서비스 포트번호 죽이고 서비스 배포해야함
 			}
+		}
+		stage('deploy'){
 			steps{
 				echo 'deploying...'	
 				sh 'rm -rf /home/travel-restapi/travel-restapi.war'
