@@ -18,8 +18,12 @@
 		</foreach>
 	</insert>
 	
-	<update id="updateArea" parameterType="string">
+	<update id="updateAreaY" parameterType="string">
 		update area set area = 'Y' where location = #{location}; 
+	</update>
+	
+	<update id="updateAreaN" parameterType="string">
+		update area set area = 'N' where location = #{location}; 
 	</update>
 	
 </mapper>

@@ -15,7 +15,10 @@ public interface TravelMapper {
 	/* 해당 지역 삽입*/
 	int insertArea(List<String> location);
 	
-	/* 지역 색칠 */
-	int updateArea(String location);
+	/* 지역 색칠 Y */
+	int updateAreaY(String location);
+	
+	/* 지역 색칠 N*/
+	int updateAreaN(String location);
 	
 }

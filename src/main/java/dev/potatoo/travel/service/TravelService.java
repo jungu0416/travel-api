@@ -28,9 +28,15 @@ public class TravelService {
 	}
 	
 	/* 지역 Y로 업데이트 */
-	public int updateArea(String location) {
-		return travelMapper.updateArea(location);
+	public int updateAreaY(String location) {
+		return travelMapper.updateAreaY(location);
 	}
+	
+	/* 지역 N으로 업데이트 */
+	public int updateAreaN(String location) {
+		return travelMapper.updateAreaN(location);
+	}
+	
 	
 	
 	

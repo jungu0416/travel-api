@@ -35,8 +35,15 @@ public class MainController {
 	
 	@PostMapping("/update/area")
 	public ResponseEntity<Object> updateArea(@RequestBody Location location){
-		System.out.println("location : " + location.getLocation());
-		
-		return new ResponseEntity<>(travelService.updateArea(location.getLocation()), HttpStatus.OK);
+		if(location.getUpdate().equals("Y")) {
+			return new ResponseEntity<>(travelService.updateAreaY(location.getLocation()), HttpStatus.OK);
+		}else {
+			return new ResponseEntity<>(travelService.updateAreaN(location.getLocation()), HttpStatus.OK);
+		}
 	}
+	
+	
+	
+	
+	
 }
