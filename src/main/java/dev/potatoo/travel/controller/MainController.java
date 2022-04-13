@@ -8,9 +8,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import dev.potatoo.travel.model.Location;
 import dev.potatoo.travel.service.TravelService;
 
 @RestController
@@ -34,10 +34,9 @@ public class MainController {
 	}
 	
 	@PostMapping("/update/area")
-	public ResponseEntity<Object> updateArea(@RequestBody String location){
+	public ResponseEntity<Object> updateArea(@RequestBody Location location){
+		System.out.println("location : " + location.getLocation());
 		
-		System.out.println("location : " + location);
-		
-		return new ResponseEntity<>(travelService.updateArea(location), HttpStatus.OK);
+		return new ResponseEntity<>(travelService.updateArea(location.getLocation()), HttpStatus.OK);
 	}
 }
