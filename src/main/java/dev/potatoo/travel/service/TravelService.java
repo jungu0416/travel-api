@@ -27,7 +27,7 @@ public class TravelService {
 		return travelMapper.insertArea(location);
 	}
 	
-	/* 지역 삽입 */
+	/* 지역 Y로 업데이트 */
 	public int updateArea(String location) {
 		return travelMapper.updateArea(location);
 	}
