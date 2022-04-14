@@ -10,7 +10,7 @@
 	</select>
 		
 	<insert id="updateArea" parameterType="location">
-	    INSERT INTO travel.area (location,area) VALUES (#{location},'N')
+	    INSERT INTO travel.area (location,area) VALUES (#{location},#{update})
 		ON DUPLICATE KEY UPDATE area = #{update};
 	</insert>
 	
