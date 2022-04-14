@@ -24,20 +24,19 @@ public class MainController {
 		return new ResponseEntity<>(travelService.checkArea(),HttpStatus.OK);
 	}
 	
-	/* 맨처음 DB에 insert 할때만 */
-	@PostMapping("/insert/area")
-	public ResponseEntity<Object> insertArea(@RequestBody List<String> location) {
-		System.out.println("location : " + location);
-		
-		return null;
-		//return new ResponseEntity<>(travelService.insertArea(location),HttpStatus.OK);
-	}
-	
 	@PostMapping("/update/area")
 	public ResponseEntity<Object> updateArea(@RequestBody Location location){
 		return new ResponseEntity<>(travelService.updateArea(location), HttpStatus.OK);
 	}
 	
+	@PostMapping("/insert/area")
+	public ResponseEntity<Object> insertArea(@RequestBody List<String> area){
+		
+		System.out.println(area);
+		
+		
+		return null;
+	}
 	
 	
 	

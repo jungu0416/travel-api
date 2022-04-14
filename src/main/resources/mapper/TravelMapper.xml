@@ -9,17 +9,16 @@
 		select location,area from area where area = 'Y';
 	</select>
 	
+	<update id="updateArea" parameterType="Location">
+		update area set area = #{update} where location = #{location}; 
+	</update>
+	
 	<insert id= "insertArea" parameterType="java.util.List">
 		<!-- 파라미터에 도시이름 넣기 -->
 		insert into area (location,area)
 			values
 		<foreach item="item" index="index" collection="list">
-		(#{item.location},'N');
+		(#{item},'N');
 		</foreach>
 	</insert>
-	
-	<update id="updateArea" parameterType="Location">
-		update area set area = #{update} where location = #{location}; 
-	</update>
-	
 </mapper>

@@ -23,15 +23,15 @@ public class TravelService {
 		return travelMapper.checkArea();
 	}
 	
-	/* 지역 삽입 */
-	public int insertArea(List<String> location) {
-		return travelMapper.insertArea(location);
-	}
-	
+	/* 지역 색칠하기 */
 	public int updateArea(Location location) {
 		return travelMapper.updateArea(location);
 	}
 	
+	/* 지역 삽입 */
+	public int insertArea(List<String> area) {
+		return travelMapper.insertArea(area);
+	}
 	
 	
 	
