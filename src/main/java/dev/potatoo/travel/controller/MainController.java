@@ -35,8 +35,6 @@ public class MainController {
 	@PostMapping("/insert/area")
 	public ResponseEntity<Object> insertArea(@RequestBody String area){
 		
-		System.out.println("area : "+area);
-		
 		try {
 			List<String> list = new ArrayList<String>();
 			

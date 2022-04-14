@@ -17,8 +17,10 @@
 		<!-- 파라미터에 도시이름 넣기 -->
 		insert into `area` (location,area)
 			values
+			(
 		<foreach item="item" index="index" collection="list">
-		(#{item},'N');
+			#{item},'N'
 		</foreach>
+			);
 	</insert>
 </mapper>
