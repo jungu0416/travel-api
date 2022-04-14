@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 
 import dev.potatoo.travel.model.CheckArea;
+import dev.potatoo.travel.model.Location;
 
 @Mapper
 public interface TravelMapper {
@@ -16,9 +17,6 @@ public interface TravelMapper {
 	int insertArea(List<String> location);
 	
 	/* 지역 색칠 Y */
-	int updateAreaY(String location);
-	
-	/* 지역 색칠 N*/
-	int updateAreaN(String location);
+	int updateArea(Location location);
 	
 }

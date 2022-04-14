@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import dev.potatoo.travel.model.CheckArea;
+import dev.potatoo.travel.model.Location;
 import dev.potatoo.travel.repository.TravelMapper;
 
 
@@ -27,15 +28,10 @@ public class TravelService {
 		return travelMapper.insertArea(location);
 	}
 	
-	/* 지역 Y로 업데이트 */
-	public int updateAreaY(String location) {
-		return travelMapper.updateAreaY(location);
+	public int updateArea(Location location) {
+		return travelMapper.updateArea(location);
 	}
 	
-	/* 지역 N으로 업데이트 */
-	public int updateAreaN(String location) {
-		return travelMapper.updateAreaN(location);
-	}
 	
 	
 	
