@@ -30,10 +30,14 @@ public class MainController {
 	}
 	
 	@PostMapping("/insert/area")
-	public ResponseEntity<Object> insertArea(@RequestBody List<String> area){
+	public ResponseEntity<Object> insertArea(@RequestBody String area){
+		
 		
 		System.out.println(area);
-		return new ResponseEntity<>(travelService.insertArea(area), HttpStatus.OK);
+		
+		
+		return null;
+		//return new ResponseEntity<>(travelService.insertArea(area), HttpStatus.OK);
 	}
 	
 	
