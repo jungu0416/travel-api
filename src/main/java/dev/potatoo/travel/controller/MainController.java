@@ -45,8 +45,6 @@ public class MainController {
 				list.add(jsonArray.get(i).toString());
 			}
 			
-			
-			System.out.println("list : " + list);
 			return new ResponseEntity<>(travelService.insertArea(list), HttpStatus.OK);
 		} catch (Exception e) {
 			e.printStackTrace();
