@@ -8,17 +8,10 @@
 	<select id = "checkArea" resultType = "CheckArea">
 		select location,area from area where area = 'Y';
 	</select>
-	
-	<update id="updateArea" parameterType="Location">
-		update area set area = #{update} where location = #{location}; 
-	</update>
-	
-	<insert id= "insertArea" parameterType="java.util.List">
-		<!-- 파라미터에 도시이름 넣기 -->
-		insert into area (location,area)
-			values
-		<foreach item="item" separator="," collection="list">
-			( #{item} ,'N')
-		</foreach>
+		
+	<insert id="updateArea" parameterType="location">
+	    INSERT INTO travel.area (location,area) VALUES (#{location},'N')
+		ON DUPLICATE KEY UPDATE area = #{update};
 	</insert>
+	
 </mapper>

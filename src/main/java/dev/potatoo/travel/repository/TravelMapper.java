@@ -13,9 +13,7 @@ public interface TravelMapper {
 	/* 색칠된 지역 찾기 */
 	List<CheckArea> checkArea();
 	
-	/* 지역 색칠 Y */
+	/* 지역 색칠 DB에 없다면 insert */
 	int updateArea(Location location);
 	
-	/* 해당 지역 삽입*/
-	int insertArea(List<String> list);
 }
