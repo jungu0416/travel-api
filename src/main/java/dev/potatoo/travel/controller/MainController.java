@@ -33,9 +33,7 @@ public class MainController {
 	public ResponseEntity<Object> insertArea(@RequestBody List<String> area){
 		
 		System.out.println(area);
-		
-		
-		return null;
+		return new ResponseEntity<>(travelService.insertArea(area), HttpStatus.OK);
 	}
 	
 	
