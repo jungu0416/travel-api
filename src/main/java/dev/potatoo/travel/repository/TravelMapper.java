@@ -17,5 +17,5 @@ public interface TravelMapper {
 	int updateArea(Location location);
 	
 	/* 해당 지역 삽입*/
-	int insertArea(List<String> area);
+	int insertArea(List<String> list);
 }

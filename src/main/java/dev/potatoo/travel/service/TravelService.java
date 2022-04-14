@@ -29,8 +29,8 @@ public class TravelService {
 	}
 	
 	/* 지역 삽입 */
-	public int insertArea(List<String> area) {
-		return travelMapper.insertArea(area);
+	public int insertArea(List<String> list) {
+		return travelMapper.insertArea(list);
 	}
 	
 	
