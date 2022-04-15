@@ -5,4 +5,4 @@
 ### 로그 안나오게 프로퍼티 설정 변경?
 
 spring boot / gradle 
-![ex_screenshot](./travel.png)
+![travel](./travel.png)
