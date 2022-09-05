@@ -21,7 +21,7 @@ pipeline {
 		stage('kill port'){
 			steps{
 				echo 'need to kill past port...'
-				sh 'sh /home/travel-back/stop.sh'
+				//sh 'sh /home/travel-back/stop.sh'
 			}
 		}
 		stage('deploy'){
