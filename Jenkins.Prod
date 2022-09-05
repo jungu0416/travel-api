@@ -27,8 +27,8 @@ pipeline {
 		stage('deploy'){
 			steps{
 				echo 'deploying...'	
-				sh 'rm -rf /home/travel-back/travel-restapi.war'
-				sh 'mv build/libs/* /home/travel-back/'
+				sh 'sudo rm -rf /home/travel-back/travel-restapi.war'
+				sh 'sudo mv build/libs/* /home/travel-back/'
 			}
 		}
 		stage('execute'){
