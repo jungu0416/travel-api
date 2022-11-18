@@ -10,3 +10,5 @@ AWS에 젠킨스 설치 후 build gradle 하면 메모리 부족으로 서버 �
 log4j 써서 좀더 로그 보이게 해볼까..생각중..
 
 spring boot / gradle 
+
+mapper 어노테이션
