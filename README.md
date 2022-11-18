@@ -7,7 +7,7 @@
 ## About
 * REST API 통신
 
-## error
+## Error & Solved
 * 기존 AWS 프리티어는 램이 1G임에 따라 jenkins 및 서버 CI/CD 중 메모리 부족으로 서버 먹통 발생
   - [2022.05] memory swap 기능을 활용하여 이를 해결
   - [2022.11] AWS + 홈서버 구축으로 램용량 증설
