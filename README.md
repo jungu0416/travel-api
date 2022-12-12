@@ -2,7 +2,7 @@
 
 ## Purpose
 * 전국 여행 다녔던 곳을 색칠하며 다음 여행 장소를 선정하기에 용이 (실제로 사용중)
-* @Mapper를 사용하여 간단히 구현
+* @Mapper
 
 ## About
 * REST API 통신
