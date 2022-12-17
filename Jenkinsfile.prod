@@ -1,7 +1,7 @@
 pipeline {
 	agent any
 	environment{
-		javaHome = tool "Java8"
+		//javaHome = tool "Java8"
 		//그래들 환경변수 자바8을 사용하겠다는 뜻 다만 여기서는 안씀
 	}
 	stages {
