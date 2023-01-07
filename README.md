@@ -1,5 +1,7 @@
 # Travel Map API
 
+<img width="50%" src="https://user-images.githubusercontent.com/88638457/211123615-ca458e02-b36a-4ac4-9512-87aca7ab5eab.png"/>
+
 ## Purpose
 * 전국 여행 다녔던 곳을 색칠하며 다음 여행 장소를 선정하기에 용이 (실제로 사용중)
 * @Mapper
