@@ -10,7 +10,7 @@
 	</select>
 		
 	<insert id="updateArea" parameterType="location">
-	    INSERT INTO projects.area (location,area) VALUES (#{location},#{update})
+	    INSERT INTO area (location,area) VALUES (#{location},#{update})
 		ON DUPLICATE KEY UPDATE area = #{update};
 	</insert>
 	
