@@ -10,7 +10,7 @@ import dev.potatoo.travel.service.TravelService;
 
 @RestController
 @RequestMapping("/api")
-//@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*")
 public class MainController {
 	@Autowired
 	private TravelService travelService;
