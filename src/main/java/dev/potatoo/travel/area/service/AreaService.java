@@ -1,6 +1,8 @@
 package dev.potatoo.travel.area.service;
 
+import dev.potatoo.travel.area.request.ApiRequest;
 import dev.potatoo.travel.area.response.ApiResponseArea;
+import dev.potatoo.travel.area.response.ApiResponse;
 import dev.potatoo.travel.domain.core.Area;
 import dev.potatoo.travel.domain.repository.AreaRepository;
 import lombok.RequiredArgsConstructor;
@@ -28,5 +30,28 @@ public class AreaService {
                                                     .collect(Collectors.toList());
 
         return apiResponseArea;
+    }
+
+    public ApiResponse insertArea(ApiRequest apiRequest) {
+        Area area = new Area();
+        area.insertArea(apiRequest);
+
+        ApiResponse apiResponse = new ApiResponse().builder()
+                        .area(areaRepository.save(area))
+                        .build();
+
+        return apiResponse;
+    }
+
+
+    public ApiResponse updateArea(ApiRequest apiRequest) {
+        Area area = new Area();
+        area.updateArea(apiRequest);
+
+        ApiResponse apiResponse = new ApiResponse().builder()
+                .area(areaRepository.save(area))
+                .build();
+
+        return apiResponse;
     }
 }
