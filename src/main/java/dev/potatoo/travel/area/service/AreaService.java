@@ -19,7 +19,7 @@ public class AreaService {
 
     public List<ApiResponseArea> checkArea() {
 
-        List<Area> areaList = areaRepository.findAll();
+        List<Area> areaList = areaRepository.findAllByArea("Y");
 
         List<ApiResponseArea> apiResponseArea = areaList.stream()
                                                     .map(area ->
