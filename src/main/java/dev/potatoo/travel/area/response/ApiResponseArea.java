@@ -2,7 +2,6 @@ package dev.potatoo.travel.area.response;
 
 import dev.potatoo.travel.domain.core.Area;
 import lombok.Builder;
-import lombok.Data;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
