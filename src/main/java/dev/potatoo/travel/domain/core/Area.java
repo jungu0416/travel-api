@@ -1,14 +1,19 @@
 package dev.potatoo.travel.domain.core;
 
+import com.sun.istack.NotNull;
 import dev.potatoo.travel.area.request.ApiRequest;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.time.Instant;
 
 @Entity
 @Getter
+@Table(name = "area")
+@EntityListeners(AuditingEntityListener.class)
 public class Area {
 
     @Id
@@ -16,8 +21,12 @@ public class Area {
 
     private String area;
 
-    //private String insertDate;
-    //private String modifiedDate;
+    @CreatedDate
+    @Column(updatable = false)
+    private Instant insertDate;
+
+    @LastModifiedDate
+    private Instant modifiedDate;
 
     public void insertArea(ApiRequest apiRequest) {
         this.location = apiRequest.getLocation();
