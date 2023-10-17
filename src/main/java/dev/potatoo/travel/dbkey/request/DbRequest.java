@@ -7,5 +7,6 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class DbRequest {
     private String dbKey;
+    private String upsertArea;
 
 }
