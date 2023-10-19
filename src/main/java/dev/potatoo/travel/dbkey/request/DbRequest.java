@@ -1,5 +1,7 @@
 package dev.potatoo.travel.dbkey.request;
 
+import dev.potatoo.travel.area.request.ApiRequest;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
@@ -8,5 +10,6 @@ import lombok.RequiredArgsConstructor;
 public class DbRequest {
     private String dbKey;
     private String upsertArea;
+    private ApiRequest apiRequest;
 
 }

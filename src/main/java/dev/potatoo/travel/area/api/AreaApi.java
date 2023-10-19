@@ -26,18 +26,18 @@ public class AreaApi {
                 .body(areaService.checkArea());
     }
 
-    @PostMapping("/area")
-    public ResponseEntity<ApiResponse> insertArea(@RequestBody ApiRequest apiRequest) {
-        return ResponseEntity
-                .status(HttpStatus.OK)
-                .body(areaService.insertArea(apiRequest));
-    }
+//    @PostMapping("/area")
+//    public ResponseEntity<ApiResponse> insertArea(@RequestBody ApiRequest apiRequest) {
+//        return ResponseEntity
+//                .status(HttpStatus.OK)
+//                .body(areaService.insertArea(apiRequest));
+//    }
 
-    @PutMapping("/area")
-    public ResponseEntity<ApiResponse> updateArea(@RequestBody ApiRequest apiRequest) {
-        return ResponseEntity
-                .status(HttpStatus.OK)
-                .body(areaService.updateArea(apiRequest));
-    }
+//    @PutMapping("/area")
+//    public ResponseEntity<ApiResponse> updateArea(@RequestBody ApiRequest apiRequest) {
+//        return ResponseEntity
+//                .status(HttpStatus.OK)
+//                .body(areaService.updateArea(apiRequest));
+//    }
 
 }

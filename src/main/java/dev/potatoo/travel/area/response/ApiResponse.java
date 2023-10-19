@@ -9,15 +9,11 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class ApiResponse {
 
-    private String check;
+    private String message;
 
-    private String location;
-    private String area;
     @Builder
-    public ApiResponse(Area area) {
-        this.check = "OK";
-        this.location = area.getLocation();
-        this.area = area.getArea();
+    public ApiResponse(String message) {
+        this.message = message;
     }
 
 }

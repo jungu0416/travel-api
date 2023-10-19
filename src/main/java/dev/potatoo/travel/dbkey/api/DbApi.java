@@ -1,7 +1,7 @@
 package dev.potatoo.travel.dbkey.api;
 
+import dev.potatoo.travel.area.response.ApiResponse;
 import dev.potatoo.travel.dbkey.request.DbRequest;
-import dev.potatoo.travel.dbkey.response.DbResponse;
 import dev.potatoo.travel.dbkey.service.DbService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 @RequestMapping("/api")
 @CrossOrigin("*")
-public class dbApi {
+public class DbApi {
 
     private final DbService dbService;
 
     @PostMapping("/dbKey")
-    public ResponseEntity<DbResponse> getDbKey(@RequestBody DbRequest dbRequest) {
+    public ResponseEntity<ApiResponse> getDbKey(@RequestBody DbRequest dbRequest) {
 
         return ResponseEntity
                 .status(HttpStatus.OK)
