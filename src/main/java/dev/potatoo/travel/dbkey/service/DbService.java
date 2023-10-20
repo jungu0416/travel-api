@@ -21,10 +21,6 @@ public class DbService {
 
     public ApiResponse checkDbKey(DbRequest dbRequest) {
 
-        log.info(dbRequest.getDbKey());
-        log.info(dbRequest.getUpsertArea());
-        log.info(dbRequest.getApiRequest().getLocation());
-
         ApiResponse apiResponse = null;
         String clientSHA256 = EncryptionUtils.encryptSHA256(dbRequest.getDbKey());
 
@@ -34,8 +30,6 @@ public class DbService {
 
 
         if (clientSHA256.equals(serverSHA256)) {
-            log.info("clientSHA256 : " + clientSHA256);
-            log.info("serverSHA256 : " + serverSHA256);
 
             String upSert = dbRequest.getUpsertArea();
 
@@ -50,8 +44,6 @@ public class DbService {
             }
 
         } else {
-            log.info("clientSHA256 : " + clientSHA256);
-            log.info("serverSHA256 : " + serverSHA256);
 
             apiResponse = new ApiResponse().builder()
                     .message("색칠에 실패했습니다. 비밀번호를 확인해 주세요.")
