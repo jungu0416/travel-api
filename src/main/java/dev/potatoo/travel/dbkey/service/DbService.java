@@ -24,10 +24,10 @@ public class DbService {
 
         ApiResponse apiResponse = null;
         ApiResponseArea apiResponseArea = null;
-        String clientSHA256 = EncryptionUtils.encryptSHA256(dbRequest.getDbKey());
 
         List<DbKey> serverSHA256List = dbKeyRepository.findAll();
 
+        String clientSHA256 = EncryptionUtils.encryptSHA256(dbRequest.getDbKey());
         String serverSHA256 = serverSHA256List.get(0).getDbKey();
 
 
