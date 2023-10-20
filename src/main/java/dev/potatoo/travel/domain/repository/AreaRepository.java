@@ -10,4 +10,6 @@ import java.util.List;
 public interface AreaRepository extends JpaRepository<Area, Long> {
 
     List<Area> findAllByArea(String y);
+
+    Area findByLocation(String location);
 }

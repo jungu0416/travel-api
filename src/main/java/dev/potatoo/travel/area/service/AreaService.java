@@ -32,30 +32,39 @@ public class AreaService {
         return apiResponseArea;
     }
 
-    public ApiResponse insertArea(ApiRequest apiRequest) {
-        Area area = new Area();
+    public ApiResponseArea findByLocation(String location) {
 
-        area.insertArea(apiRequest);
-        areaRepository.save(area);
+        return ApiResponseArea.builder()
+                        .area(areaRepository.findByLocation(location))
+                        .build();
 
-        ApiResponse apiResponse = new ApiResponse().builder()
-                    .message("색칠 성공!")
-                    .build();
-
-        return apiResponse;
     }
 
 
-    public ApiResponse updateArea(ApiRequest apiRequest) {
-        Area area = new Area();
+//    public ApiResponse insertArea(ApiRequest apiRequest) {
+//        Area area = new Area();
+//
+//        area.insertArea(apiRequest);
+//        areaRepository.save(area);
+//
+//        ApiResponse apiResponse = new ApiResponse().builder()
+//                    .message("색칠 성공!")
+//                    .build();
+//
+//        return apiResponse;
+//    }
 
-        area.updateArea(apiRequest);
-        areaRepository.save(area);
 
-        ApiResponse apiResponse = new ApiResponse().builder()
-                .message("색칠 성공!")
-                .build();
-
-        return apiResponse;
-    }
+//    public ApiResponse updateArea(ApiRequest apiRequest) {
+//        Area area = new Area();
+//
+//        area.updateArea(apiRequest);
+//        areaRepository.save(area);
+//
+//        ApiResponse apiResponse = new ApiResponse().builder()
+//                .message("색칠 성공!")
+//                .build();
+//
+//        return apiResponse;
+//    }
 }

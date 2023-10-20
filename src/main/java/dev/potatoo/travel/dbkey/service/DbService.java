@@ -1,6 +1,7 @@
 package dev.potatoo.travel.dbkey.service;
 
 import dev.potatoo.travel.area.response.ApiResponse;
+import dev.potatoo.travel.area.response.ApiResponseArea;
 import dev.potatoo.travel.area.service.AreaService;
 import dev.potatoo.travel.common.utils.EncryptionUtils;
 import dev.potatoo.travel.dbkey.request.DbRequest;
@@ -22,6 +23,7 @@ public class DbService {
     public ApiResponse checkDbKey(DbRequest dbRequest) {
 
         ApiResponse apiResponse = null;
+        ApiResponseArea apiResponseArea = null;
         String clientSHA256 = EncryptionUtils.encryptSHA256(dbRequest.getDbKey());
 
         List<DbKey> serverSHA256List = dbKeyRepository.findAll();
@@ -31,16 +33,12 @@ public class DbService {
 
         if (clientSHA256.equals(serverSHA256)) {
 
-            String upSert = dbRequest.getUpsertArea();
+            apiResponseArea = areaService.findByLocation(dbRequest.getApiRequest().getLocation());
 
-            switch (upSert) {
-                case "insert" :
-                    apiResponse = areaService.insertArea(dbRequest.getApiRequest());
-                    break;
-
-                case "update" :
-                    apiResponse = areaService.updateArea(dbRequest.getApiRequest());
-                    break;
+            if(apiResponseArea.getArea().equals("Y")) {
+                //만들어야함
+            } else {
+                //만들어야함
             }
 
         } else {
