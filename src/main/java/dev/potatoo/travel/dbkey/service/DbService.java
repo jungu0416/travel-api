@@ -33,21 +33,13 @@ public class DbService {
 
         if (clientSHA256.equals(serverSHA256)) {
 
-            try {
-                apiResponseArea = areaService.findByLocation(dbRequest.getApiRequest().getLocation());
+            apiResponseArea = areaService.findByLocation(dbRequest.getApiRequest().getLocation());
 
-                if(apiResponseArea.getArea().equals("Y")) {
-                    apiResponse = areaService.updateArea(dbRequest.getApiRequest());
-                } else {
-                    apiResponse = areaService.insertArea(dbRequest.getApiRequest());
-                }
-
-            } catch(NullPointerException e) {
-                e.printStackTrace();
-
+            if(apiResponseArea == null || apiResponseArea.getArea().equals("N")) {
                 apiResponse = areaService.insertArea(dbRequest.getApiRequest());
+            } else {
+                apiResponse = areaService.updateArea(dbRequest.getApiRequest());
             }
-
 
         } else {
             apiResponse = new ApiResponse().builder()

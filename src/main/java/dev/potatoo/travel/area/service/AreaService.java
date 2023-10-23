@@ -33,12 +33,19 @@ public class AreaService {
         return apiResponseArea;
     }
 
-    public ApiResponseArea findByLocation(String location) throws NullPointerException {
+    public ApiResponseArea findByLocation(String location){
 
-        return ApiResponseArea.builder()
-                        .area(areaRepository.findByLocation(location))
-                        .build();
+        Area area = areaRepository.findByLocation(location);
 
+        if (area == null) {
+            return null;
+
+        } else {
+            return ApiResponseArea.builder()
+                    .area(area)
+                    .build();
+
+        }
     }
 
 
@@ -49,7 +56,7 @@ public class AreaService {
         areaRepository.save(area);
 
         ApiResponse apiResponse = new ApiResponse().builder()
-                    .message("색칠 성공!")
+                    .message("색칠하였습니다.")
                     .build();
 
         return apiResponse;
@@ -63,7 +70,7 @@ public class AreaService {
         areaRepository.save(area);
 
         ApiResponse apiResponse = new ApiResponse().builder()
-                .message("색칠 성공!")
+                .message("지웠습니다.")
                 .build();
 
         return apiResponse;
