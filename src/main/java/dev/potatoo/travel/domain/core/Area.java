@@ -1,6 +1,5 @@
 package dev.potatoo.travel.domain.core;
 
-import com.sun.istack.NotNull;
 import dev.potatoo.travel.area.request.ApiRequest;
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;

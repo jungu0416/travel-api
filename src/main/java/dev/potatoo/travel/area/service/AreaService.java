@@ -6,6 +6,7 @@ import dev.potatoo.travel.area.response.ApiResponse;
 import dev.potatoo.travel.domain.core.Area;
 import dev.potatoo.travel.domain.repository.AreaRepository;
 import lombok.RequiredArgsConstructor;
+import org.apache.ibatis.jdbc.Null;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -32,7 +33,7 @@ public class AreaService {
         return apiResponseArea;
     }
 
-    public ApiResponseArea findByLocation(String location) {
+    public ApiResponseArea findByLocation(String location) throws NullPointerException {
 
         return ApiResponseArea.builder()
                         .area(areaRepository.findByLocation(location))
