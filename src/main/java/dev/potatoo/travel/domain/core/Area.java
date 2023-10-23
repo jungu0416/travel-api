@@ -28,15 +28,15 @@ public class Area {
     @LastModifiedDate
     private Instant modifiedDate;
 
-//    public void insertArea(ApiRequest apiRequest) {
-//        this.location = apiRequest.getLocation();
-//        this.area = "Y";
-//    }
+    public void insertArea(ApiRequest apiRequest) {
+        this.location = apiRequest.getLocation();
+        this.area = "Y";
+    }
 
-//    public void updateArea(ApiRequest apiRequest) {
-//        this.location = apiRequest.getLocation();
-//        this.area = "N";
-//    }
+    public void updateArea(ApiRequest apiRequest) {
+        this.location = apiRequest.getLocation();
+        this.area = "N";
+    }
 
 
 }

@@ -22,8 +22,8 @@ public class DbService {
 
     public ApiResponse checkDbKey(DbRequest dbRequest) {
 
-        ApiResponse apiResponse = null;
-        ApiResponseArea apiResponseArea = null;
+        ApiResponse apiResponse;
+        ApiResponseArea apiResponseArea;
 
         List<DbKey> serverSHA256List = dbKeyRepository.findAll();
 
@@ -36,17 +36,15 @@ public class DbService {
             apiResponseArea = areaService.findByLocation(dbRequest.getApiRequest().getLocation());
 
             if(apiResponseArea.getArea().equals("Y")) {
-                //만들어야함
+                apiResponse = areaService.updateArea(dbRequest.getApiRequest());
             } else {
-                //만들어야함
+                apiResponse = areaService.insertArea(dbRequest.getApiRequest());
             }
 
         } else {
-
             apiResponse = new ApiResponse().builder()
                     .message("색칠에 실패했습니다. 비밀번호를 확인해 주세요.")
                     .build();
-
         }
 
         return apiResponse;

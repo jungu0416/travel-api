@@ -41,30 +41,30 @@ public class AreaService {
     }
 
 
-//    public ApiResponse insertArea(ApiRequest apiRequest) {
-//        Area area = new Area();
-//
-//        area.insertArea(apiRequest);
-//        areaRepository.save(area);
-//
-//        ApiResponse apiResponse = new ApiResponse().builder()
-//                    .message("색칠 성공!")
-//                    .build();
-//
-//        return apiResponse;
-//    }
+    public ApiResponse insertArea(ApiRequest apiRequest) {
+        Area area = new Area();
+
+        area.insertArea(apiRequest);
+        areaRepository.save(area);
+
+        ApiResponse apiResponse = new ApiResponse().builder()
+                    .message("색칠 성공!")
+                    .build();
+
+        return apiResponse;
+    }
 
 
-//    public ApiResponse updateArea(ApiRequest apiRequest) {
-//        Area area = new Area();
-//
-//        area.updateArea(apiRequest);
-//        areaRepository.save(area);
-//
-//        ApiResponse apiResponse = new ApiResponse().builder()
-//                .message("색칠 성공!")
-//                .build();
-//
-//        return apiResponse;
-//    }
+    public ApiResponse updateArea(ApiRequest apiRequest) {
+        Area area = new Area();
+
+        area.updateArea(apiRequest);
+        areaRepository.save(area);
+
+        ApiResponse apiResponse = new ApiResponse().builder()
+                .message("색칠 성공!")
+                .build();
+
+        return apiResponse;
+    }
 }
